@@ -1,11 +1,11 @@
 import React from "react";
-import { Container, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 export default function Product({ props }) {
   return (
     <>
       <Card className="my-3 p-3 rounded">
-        {/* <a href={`/product/${props.product._id}`}> */}
+        {/* <a href={`/products/${props._id}`}> */}
         <Card.Img variant="top" src={props.image} />
         {/* </a> */}
         <Card.Body>
