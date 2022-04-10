@@ -1,19 +1,20 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function Product({ props }) {
   return (
     <>
       <Card className="my-3 p-3 rounded">
-        {/* <a href={`/products/${props._id}`}> */}
-        <Card.Img variant="top" src={props.image} />
-        {/* </a> */}
+        <Link to={`/products/${props._id}`}>
+          <Card.Img variant="top" src={props.image} />
+        </Link>
         <Card.Body>
-          {/* <a href={`/product/${props._id}`}> */}
-          <Card.Title as="div">
-            <strong>{props.name}</strong>
-          </Card.Title>
-          {/* </a> */}
+          <a href={`/products/${props._id}`}>
+            <Card.Title as="div">
+              <strong>{props.name}</strong>
+            </Card.Title>
+          </a>
           <Card.Text as="div">
             <div className="my-3">
               {props.rating} from {props.numReviews}

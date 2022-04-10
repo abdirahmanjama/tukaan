@@ -15,7 +15,7 @@ export default function App() {
           <Container>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/products/:id" element={Products} />
+              <Route path="/products/:id" element={<Products />} />
             </Routes>
           </Container>
         </main>
