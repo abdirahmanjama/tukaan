@@ -1,6 +1,6 @@
 import express from "express";
 import products from "./routes/products.js";
-import productsData from "./data/products.js";
+import productsData from "./data/products.json";
 const app = express();
 
 /**
@@ -22,4 +22,4 @@ app.get("/api/products/:id", (req, res) => {
  * Server
  */
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, console.log(`server listening on ${PORT}`));
+app.listen(PORT, () => console.log(`${PORT}`));
