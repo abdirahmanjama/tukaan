@@ -1,9 +1,9 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Container } from "react-bootstrap";
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import ProductDetails from "../src/pages/ProductDetails";
+import ProductPage from "./pages/ProductPage";
 
 export default function App() {
   return (
@@ -13,8 +13,8 @@ export default function App() {
         <main className="py-3">
           <Container>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/products/:id" element={<ProductPage />} />
             </Routes>
           </Container>
         </main>

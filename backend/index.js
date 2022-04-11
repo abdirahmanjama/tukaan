@@ -14,13 +14,13 @@ app.get("/api/products", (_, res) => {
   res.json(products);
 });
 
-app.get("/api/products/:id", (req, res) => {
-  const product = products.find((item) => item._id === req.params.id);
-  res.json(product);
+app.get("/api/products/:id", async (req, res) => {
+  const product = await products.find((item) => item._id === req.params.id);
+  res.send(product);
 });
 
 /**
  * Server
  */
-
-app.listen(7654, console.log("server listening on port 7654"));
+const PORT = process.env.PORT || 5001;
+app.listen(PORT, console.log(`server listening on ${PORT}`));

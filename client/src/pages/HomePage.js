@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import Product from "../components/Product";
-import productsData from "../products";
 import axios from "axios";
 
 export default function Home() {
@@ -10,8 +9,8 @@ export default function Home() {
   useEffect(() => {
     async function getProducts() {
       try {
-        const data = await axios.get("/api/products");
-        setProducts(data.data);
+        const { data } = await axios.get("/api/products");
+        setProducts(data);
       } catch (error) {
         console.log("Could not retrieve products");
       }
@@ -22,10 +21,12 @@ export default function Home() {
     <>
       <h1>Latest Products</h1>
       <Row>
+        {console.log(products)}
         {products &&
           products.map((product) => (
             <Col sm={12} md={6} lg={4} xl={3}>
               <Product
+                key={product._id}
                 props={product}
                 //   id={product._id}
                 //   name={product.name}
