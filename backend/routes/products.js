@@ -1,4 +1,3 @@
-const { Request, Response } = require("express");
-const products = require("./data/products");
+import products from "../data/products.js";
 
-module.exports(req, res) =  res.json(products);
+export default (_, res) => res.json(products);

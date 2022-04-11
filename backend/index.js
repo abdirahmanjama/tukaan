@@ -1,5 +1,6 @@
-const express = require("express");
-const products = require("./data/products");
+import express from "express";
+import products from "./routes/products.js";
+import productsData from "./data/products.js";
 const app = express();
 
 /**
@@ -10,12 +11,10 @@ app.get("/", (_, res) => {
   res.send("API is running");
 });
 
-app.get("/api/products", (_, res) => {
-  res.json(products);
-});
+app.get("/api/products", products);
 
-app.get("/api/products/:id", async (req, res) => {
-  const product = await products.find((item) => item._id === req.params.id);
+app.get("/api/products/:id", (req, res) => {
+  const product = productsData.find((item) => item._id === req.params.id);
   res.send(product);
 });
 
