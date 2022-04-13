@@ -3,6 +3,7 @@ import products from "./routes/products";
 import productsData from "./data/products.json";
 import connectDB from "./config/db";
 import dotenv from "dotenv";
+import { Product } from "../shared/interfaces";
 
 dotenv.config();
 
@@ -21,7 +22,9 @@ app.get("/", (_, res) => {
 app.get("/api/products", products);
 
 app.get("/api/products/:id", (req, res) => {
-  const product = productsData.find((item) => item._id === req.params.id);
+  const product: Product | undefined = productsData?.find(
+    (item) => item._id === req.params.id
+  );
   res.send(product);
 });
 
