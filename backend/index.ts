@@ -1,7 +1,14 @@
 import express from "express";
-import products from "./routes/products.js";
+import products from "./routes/products";
 import productsData from "./data/products.json";
+import connectDB from "./config/db";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 const app = express();
+
+connectDB();
 
 /**
  * Express routes and middlewares
