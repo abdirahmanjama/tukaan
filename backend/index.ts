@@ -1,6 +1,6 @@
 import express from "express";
 import products from "./routes/products";
-import productsData from "./data/products.json";
+import productsData from "./data/products";
 import connectDB from "./config/db";
 import dotenv from "dotenv";
 import { Product } from "../shared/interfaces";
@@ -21,12 +21,12 @@ app.get("/", (_, res) => {
 
 app.get("/api/products", products);
 
-app.get("/api/products/:id", (req, res) => {
-  const product: Product | undefined = productsData?.find(
-    (item) => item._id === req.params.id
-  );
-  res.send(product);
-});
+// app.get("/api/products/:id", (req, res) => {
+//   // const product: Product | undefined = productsData?.find(
+//   //   (item) => item._id === req.params.id
+//   // );
+//   res.send(product);
+// });
 
 /**
  * Server
