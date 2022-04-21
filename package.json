@@ -9,7 +9,7 @@
         "server": "ts-node backend/index.ts",
         "client": "npm start --prefix client",
         "dev": "tsc -w & nodemon .",
-        "data:import": "node backend/seeder.ts",
+        "data:import": "ts-node backend/seeder.ts",
         "data:destroy": "node backend/seeder -d",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
